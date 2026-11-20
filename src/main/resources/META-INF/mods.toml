@@ -1,0 +1,21 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="interactivecinematics"
+version="${file.jarVersion}"
+displayName="Interactive Cinematics"
+authors="OllasLand"
+description='''Cinematicas individuales, editor visual y QTE ritmicos para Forge 1.20.1.'''
+[[dependencies.interactivecinematics]]
+modId="forge"
+mandatory=true
+versionRange="[47.4.10,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.interactivecinematics]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"

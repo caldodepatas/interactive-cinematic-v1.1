@@ -1,0 +1,42 @@
+{
+  "id": "templo_escape",
+  "title": "Escape del templo",
+  "duration": 400,
+  "skyTop": -16117723,
+  "skyBottom": -14273452,
+  "actors": [
+    {
+      "id": "protagonista", "entity": "viewer", "x": 0.36, "y": 0.77, "scale": 1.5,
+      "motion": [
+        {"tick": 0, "x": 0.14, "y": 0.77, "scale": 1.4},
+        {"tick": 85, "x": 0.35, "y": 0.77, "scale": 1.5},
+        {"tick": 155, "x": 0.54, "y": 0.77, "scale": 1.65}
+      ]
+    },
+    {
+      "id": "enemigo", "entity": "minecraft:zombie", "x": 0.77, "y": 0.77, "scale": 1.3,
+      "motion": [
+        {"tick": 0, "x": 0.83, "y": 0.77, "scale": 1.3},
+        {"tick": 155, "x": 0.62, "y": 0.77, "scale": 1.4}
+      ]
+    }
+  ],
+  "cameras": [
+    {"tick": 0, "panX": 0, "panY": 0, "zoom": 0.82},
+    {"tick": 100, "panX": 0, "panY": 0, "zoom": 1.05},
+    {"tick": 175, "panX": -0.07, "panY": 0, "zoom": 1.2}
+  ],
+  "events": [
+    {"kind": "RHYTHM", "tick": 60, "key": "A", "x": 0.3, "y": 0.37, "window": 5, "lead": 24},
+    {"kind": "RHYTHM", "tick": 80, "key": "S", "x": 0.5, "y": 0.56, "window": 5, "lead": 24},
+    {"kind": "RHYTHM", "tick": 100, "key": "D", "x": 0.7, "y": 0.37, "window": 5, "lead": 24},
+    {"kind": "RHYTHM", "tick": 120, "key": "W", "x": 0.3, "y": 0.56, "window": 5, "lead": 24},
+    {"kind": "RHYTHM", "tick": 140, "key": "A", "x": 0.5, "y": 0.37, "window": 5, "lead": 24},
+    {"kind": "RHYTHM", "tick": 160, "key": "SPACE", "x": 0.7, "y": 0.56, "window": 5, "lead": 24},
+    {"kind": "CHOICE", "tick": 200, "key": "SPACE", "x": 0.5, "y": 0.5, "window": 5,
+      "label": "El zombie te bloquea el camino", "optionA": "Atacar", "keyA": "A", "choiceAJump": 240,
+      "optionB": "Esquivar", "keyB": "D", "choiceBJump": 280},
+    {"kind": "QTE", "tick": 245, "key": "SPACE", "x": 0.5, "y": 0.5, "window": 20,
+      "label": "Pulsa ESPACIO", "successJump": 310, "failureJump": 345}
+  ]
+}

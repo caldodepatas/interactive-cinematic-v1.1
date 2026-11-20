@@ -1,0 +1,31 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+version = '0.1.1'
+group = 'dev.ollasland.cinematics'
+base { archivesName = 'interactivecinematics-forge-1.20.1' }
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    copyIdeResources = true
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.console.level', 'info'
+            mods { interactivecinematics { source sourceSets.main } }
+        }
+        server {
+            workingDirectory project.file('run-server')
+            property 'forge.logging.console.level', 'info'
+            args '--nogui'
+            mods { interactivecinematics { source sourceSets.main } }
+        }
+    }
+}
+repositories { mavenCentral() }
+dependencies { minecraft 'net.minecraftforge:forge:1.20.1-47.4.10' }
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+jar { manifest { attributes(['Specification-Title':'interactivecinematics', 'Specification-Vendor':'OllasLand', 'Implementation-Title':project.name, 'Implementation-Version':project.version]) } }
